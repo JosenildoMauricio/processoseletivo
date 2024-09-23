@@ -32,9 +32,13 @@ public class Diretorio {
 	@JoinColumn(name = "diretorio_pai_id")
 	private Diretorio diretorioPai;
 
-	@JsonIgnoreProperties({"diretorioPai", "subDiretorios"})
+	@JsonIgnoreProperties({"diretorioPai"})
 	@OneToMany(mappedBy = "diretorioPai", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<Diretorio> subDiretorios = new HashSet<>();
+
+	@JsonIgnoreProperties({"diretorio"})
+	@OneToMany(mappedBy = "diretorio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private Set<Arquivo> arquivos = new HashSet<>();
 	
 	@CreationTimestamp
 	@Column(name = "data_cadastro")

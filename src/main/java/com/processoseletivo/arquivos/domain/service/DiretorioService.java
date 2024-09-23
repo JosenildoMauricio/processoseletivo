@@ -20,7 +20,12 @@ public class DiretorioService {
 	private DiretorioRepository diretorioRepository;
 	
 	public List<Diretorio> listarTodos() {
-		return diretorioRepository.findAll();
+
+		List<Diretorio> diretorios = diretorioRepository.findAll();
+
+		return diretorios.stream()
+				.filter(d -> d.getDiretorioPai() == null)
+				.toList();
 	}
 
 	public List<Diretorio> filtroPorNome(String nome) {
