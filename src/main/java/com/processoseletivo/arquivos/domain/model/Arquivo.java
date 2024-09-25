@@ -25,7 +25,8 @@ public class Arquivo {
 	@Column(name = "nome")
 	private String nome;
 
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JsonIgnoreProperties({"subDiretorios", "arquivos"})
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "diretorio_id")
 	private Diretorio diretorio;

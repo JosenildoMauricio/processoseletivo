@@ -58,7 +58,7 @@ public class ArquivoController {
 	public ResponseEntity<Arquivo> alterar(@PathVariable("id") Long id, @RequestBody @Valid Arquivo arquivo) {
 		Arquivo arquivoAtual = arquivoService.buscarPorId(id);
 
-		BeanUtils.copyProperties(arquivo, arquivoAtual, "id", "diretorio", "contentType", "dataCadastro", "dataAtualizacao");
+		BeanUtils.copyProperties(arquivo, arquivoAtual, "id", "diretorio", "dataCadastro", "dataAtualizacao");
 
 		return ResponseEntity
 				.status(HttpStatus.OK)
