@@ -19,6 +19,13 @@ public class DiretorioController {
 	@Autowired
 	private DiretorioService diretorioService;
 
+	@GetMapping("/raiz")
+	public ResponseEntity<Diretorio> diretorioRaiz() {
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body(diretorioService.diretorioRaiz());
+	}
+
 	@GetMapping
 	public ResponseEntity<List<Diretorio>> listarTodos() {
 		return ResponseEntity

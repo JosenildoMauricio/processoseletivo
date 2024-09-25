@@ -11,7 +11,6 @@ create table diretorio (
 create table arquivo (
     id bigint not null auto_increment,
     nome varchar(155) not null,
-    content_type varchar(80) not null,
     diretorio_id bigint not null,
     data_cadastro timestamp not null,
     data_atualizacao timestamp not null,

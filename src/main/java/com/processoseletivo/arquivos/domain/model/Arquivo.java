@@ -24,10 +24,6 @@ public class Arquivo {
 	@NotBlank
 	@Column(name = "nome")
 	private String nome;
-	
-	@NotBlank
-	@Column(name = "content_type")
-	private String contentType;
 
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@ManyToOne(fetch = FetchType.LAZY)
