@@ -1,0 +1,577 @@
+{
+	"info": {
+		"_postman_id": "2b0a0a04-ac89-41b6-8eda-7e70489e24aa",
+		"name": "Processo Seletivo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27538455"
+	},
+	"item": [
+		{
+			"name": "diretorio",
+			"item": [
+				{
+					"name": "salvar raiz",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"raiz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/diretorios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"diretorios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "salvar subdiretorio",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Documentos\",\r\n    \"diretorioPai\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/diretorios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"diretorios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXByZXNhcmlhbEBnbWFpbC5jb20iLCJpYXQiOjE3MjQyMDUwMjYsImV4cCI6MTcyNDI5MTQyNn0.y_xJn94ZQmHptf6Kzc0o70S375-QeuQkz8rhdLvPjuo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/diretorios/raiz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"diretorios",
+								"raiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXByZXNhcmlhbEBnbWFpbC5jb20iLCJpYXQiOjE3MjQyMDUwMjYsImV4cCI6MTcyNDI5MTQyNn0.y_xJn94ZQmHptf6Kzc0o70S375-QeuQkz8rhdLvPjuo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/diretorios/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"diretorios",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filtro-nome",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXByZXNhcmlhbEBnbWFpbC5jb20iLCJpYXQiOjE3MjQyMDI4OTAsImV4cCI6MTcyNDI4OTI5MH0.lonaA3Eeydyif4d9LUdxuCt2I4YATR8o_I7COmtvsyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/diretorios/filtro-nome?nome=segundo diretorio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"diretorios",
+								"filtro-nome"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "segundo diretorio"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alterar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXByZXNhcmlhbEBnbWFpbC5jb20iLCJpYXQiOjE3MjQyMDI4OTAsImV4cCI6MTcyNDI4OTI5MH0.lonaA3Eeydyif4d9LUdxuCt2I4YATR8o_I7COmtvsyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"nome\": \"sub segundo diretorio alterado\",\r\n    \"diretorioPai\": {\r\n        \"id\": 1,\r\n        \"nome\": \"primeiro diretorio\",\r\n        \"diretorioPai\": null,\r\n        \"dataCadastro\": \"2024-09-20T19:36:28Z\",\r\n        \"dataAtualizacao\": \"2024-09-20T19:36:28Z\"\r\n    },\r\n    \"subDiretorios\": [],\r\n    \"dataCadastro\": \"2024-09-20T19:37:01Z\",\r\n    \"dataAtualizacao\": \"2024-09-20T19:37:01Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/diretorios/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"diretorios",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXByZXNhcmlhbEBnbWFpbC5jb20iLCJpYXQiOjE3MjQyMDI4OTAsImV4cCI6MTcyNDI4OTI5MH0.lonaA3Eeydyif4d9LUdxuCt2I4YATR8o_I7COmtvsyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/diretorios/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"diretorios",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "arquivo",
+			"item": [
+				{
+					"name": "salvar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"arquivo da raiz texto.txt\",\r\n    \"diretorio\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/arquivos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"arquivos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar por diretorio",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXByZXNhcmlhbEBnbWFpbC5jb20iLCJpYXQiOjE3MjQyMDUwMjYsImV4cCI6MTcyNDI5MTQyNn0.y_xJn94ZQmHptf6Kzc0o70S375-QeuQkz8rhdLvPjuo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/arquivos/diretorio/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"arquivos",
+								"diretorio",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXByZXNhcmlhbEBnbWFpbC5jb20iLCJpYXQiOjE3MjQyMDUwMjYsImV4cCI6MTcyNDI5MTQyNn0.y_xJn94ZQmHptf6Kzc0o70S375-QeuQkz8rhdLvPjuo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/arquivos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"arquivos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filtro-nome",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXByZXNhcmlhbEBnbWFpbC5jb20iLCJpYXQiOjE3MjQyMDI4OTAsImV4cCI6MTcyNDI4OTI5MH0.lonaA3Eeydyif4d9LUdxuCt2I4YATR8o_I7COmtvsyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/arquivos/filtro-nome?nome=c10e46d3-da72-4403-a13d-3cc5aabc9388_nome do arquivo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"arquivos",
+								"filtro-nome"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "c10e46d3-da72-4403-a13d-3cc5aabc9388_nome do arquivo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alterar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXByZXNhcmlhbEBnbWFpbC5jb20iLCJpYXQiOjE3MjQyMDI4OTAsImV4cCI6MTcyNDI4OTI5MH0.lonaA3Eeydyif4d9LUdxuCt2I4YATR8o_I7COmtvsyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"novo nome\",\r\n    \"contentType\": \"application/pdf\",\r\n    \"diretorio\": {\r\n        \"id\": 2,\r\n        \"nome\": \"sub segundo diretorio\",\r\n        \"diretorioPai\": {\r\n            \"id\": 1,\r\n            \"nome\": \"primeiro diretorio\",\r\n            \"diretorioPai\": null,\r\n            \"dataCadastro\": \"2024-09-20T20:26:32Z\",\r\n            \"dataAtualizacao\": \"2024-09-20T20:26:32Z\"\r\n        },\r\n        \"subDiretorios\": [],\r\n        \"dataCadastro\": \"2024-09-20T20:26:34Z\",\r\n        \"dataAtualizacao\": \"2024-09-20T20:26:34Z\"\r\n    },\r\n    \"dataCadastro\": \"2024-09-20T20:26:39Z\",\r\n    \"dataAtualizacao\": \"2024-09-20T20:26:39Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/arquivos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"arquivos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXByZXNhcmlhbEBnbWFpbC5jb20iLCJpYXQiOjE3MjQyMDI4OTAsImV4cCI6MTcyNDI4OTI5MH0.lonaA3Eeydyif4d9LUdxuCt2I4YATR8o_I7COmtvsyg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/arquivos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"arquivos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -15,6 +15,8 @@ Como configurar as imagens no docker para rodar o projeto local
 
 * docker container run --name arquivos-api -d --rm -p 8080:8080 -e DB_HOST=arquivos-mysql --network arquivos-network aplicacao-spring
 
+No diretorio test/resources/postman tem uma collection do postman.
+
 Listar raiz:
 -Lista todos os diretório, subdiretorios e seus arquivos, caso haja.
 GET http://localhost:8080/api/diretorios/raiz

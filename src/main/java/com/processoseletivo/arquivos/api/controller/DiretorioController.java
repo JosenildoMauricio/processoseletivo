@@ -20,7 +20,7 @@ public class DiretorioController {
 	private DiretorioService diretorioService;
 
 	@GetMapping("/raiz")
-	public ResponseEntity<Diretorio> diretorioRaiz() {
+	public ResponseEntity<Diretorio> buscarDiretorioRaiz() {
 		return ResponseEntity
 				.status(HttpStatus.OK)
 				.body(diretorioService.diretorioRaiz());
