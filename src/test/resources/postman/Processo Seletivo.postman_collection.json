@@ -10,44 +10,6 @@
 			"name": "diretorio",
 			"item": [
 				{
-					"name": "salvar raiz",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"raiz\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/diretorios",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"diretorios"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "salvar subdiretorio",
 					"request": {
 						"auth": {
@@ -63,7 +25,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Documentos\",\r\n    \"diretorioPai\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"raw": "{\r\n    \"nome\": \"Mais um diretório\",\r\n    \"diretorioPai\": {\r\n        \"id\": 12\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -199,7 +161,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/diretorios/filtro-nome?nome=segundo diretorio",
+							"raw": "http://localhost:8080/api/diretorios/filtro-nome?nome=musica",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -213,7 +175,7 @@
 							"query": [
 								{
 									"key": "nome",
-									"value": "segundo diretorio"
+									"value": "musica"
 								}
 							]
 						}
@@ -291,7 +253,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/diretorios/3",
+							"raw": "http://localhost:8080/api/diretorios/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -300,7 +262,7 @@
 							"path": [
 								"api",
 								"diretorios",
-								"3"
+								"9"
 							]
 						}
 					},
@@ -327,7 +289,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"arquivo da raiz texto.txt\",\r\n    \"diretorio\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"raw": "{\r\n    \"nome\": \"arquivo da raiz texto.txt\",\r\n    \"diretorio\": {\r\n        \"id\": 13\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -464,7 +426,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/arquivos/filtro-nome?nome=c10e46d3-da72-4403-a13d-3cc5aabc9388_nome do arquivo",
+							"raw": "http://localhost:8080/api/arquivos/filtro-nome?nome=atestado",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -478,7 +440,7 @@
 							"query": [
 								{
 									"key": "nome",
-									"value": "c10e46d3-da72-4403-a13d-3cc5aabc9388_nome do arquivo"
+									"value": "atestado"
 								}
 							]
 						}
